@@ -16,7 +16,7 @@ public class Tweet {
         Tweet tweet = new Tweet();
         tweet.body = jsonObject.getString("text");
         tweet.createdAt = jsonObject.getString("created_at");
-        tweet.user = User.fromJson(jsonObject.getString("user"));
+        tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
 
         return tweet;
     }
@@ -28,4 +28,11 @@ public class Tweet {
         }
         return tweets;
     }
+
+/*
+    public static Tweet getFormattedTimestamp(JSONObject jsonObject){
+        Tweet tweet = new Tweet();
+        tweet.
+    }
+*/
 }
